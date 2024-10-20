@@ -9,7 +9,7 @@ Laptop/PC/RPI with wifi. From here on reverd to as PC
 socat (arm) and socat on your PC
 
 
-# root acces (linux with explination)
+# root acces (Linux with explanation)
 Format the sdcard using the device 'Format SD' function on the device.
 Power down the device -> place sdcard in a pc.
 
@@ -54,7 +54,7 @@ cd ../ && umount DASHCAM
 socat FILE:`tty`,raw,echo=0 TCP:target.com:12345
 ```
 
-# example scripts
+# Example scripts
 
 ###  full device backup 
 Recommended , this scripts dumps mtdblock partitions to sdcard 
@@ -66,13 +66,14 @@ See explanation above
 ###  (work in progress) 
 Convert script mtdblock[1-7] to phoenix card
 
-
 # Phoenix card image format
 The Phoenix card images can be dump with imgrepacker version 2.078 from [XDA](https://xdaforums.com/tags/imgrepacker/)
 There is only one issue, the image.cfg has an extra insert that caused extra data/unneeded to leaks in the image. Running the next sed command fixes that issue:
 ```
- sed 's/INPUT_DIR .. //g' -i  image.cfg
- ```
+~/Downloads/imgRePacker_2078/imgrepacker <TF790.img>
+cd <TF790.img.dump>
+sed 's/INPUT_DIR .. //g' -i  image.cfg
+```
 If you change file(s) in the image you need to regenerate the checksums. checksum files start with capital letter V.
 rootfs.fex checksum file is called Vrootfs.fex
 ```
@@ -80,6 +81,7 @@ FileAddSum rootfs.fex   Vrootfs.fex
 ```
 To repackage the file use dragon:
 ```
+cd TF790.img.dump
 dragon image.cfg sys_config.fex
 ```
 
