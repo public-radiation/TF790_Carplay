@@ -43,7 +43,7 @@ socat FILE:`tty`,raw,echo=0 TCP:target.com:12345
 ```
 cd /media/<user_name>/DASHCAM
 touch debug1
-echo -e "#!/bin/sh\n/mnt/extsd/socat TCP-LISTEN:12345,reuseaddr,fork EXEC:/bin/sh,pty,stderr,setsid,sigint,sane &" >> debug1
+echo -e '#!/bin/sh\n/mnt/extsd/socat TCP-LISTEN:12345,reuseaddr,fork EXEC:/bin/sh,pty,stderr,setsid,sigint,sane &' >> debug1
 wget "https://github.com/polaco1782/linux-static-binaries/tree/master/armv7l-eabihf" -O busybox_armv7l
 wget "https://www.busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-armv7l" -O socat
 chmod +x busybox_armv7l socat debug1
