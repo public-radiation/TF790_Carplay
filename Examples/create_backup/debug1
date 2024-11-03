@@ -10,8 +10,8 @@
 /mnt/extsd/busybox_arm poweroff 
 
 if [ -e '/etc/blink/.btlicensed' ]; then
-    # This back's up the LAST/current, if you may want to check your mtblock3 dump.
-    # This is a jiffs filesystem where there may be more
+    # This back's up the LAST/current, is a bit double because this file is stored in your mtblock3 dump.
+    # This is a jiffs filesystem, there may me more (versions of the file) depending on how to manufacture installed the image.
     cat /etc/blink/.btlicense > /mnt/extsd/btlicense_backup
 fi
 if [ -e '/etc/blink/' ]; then
