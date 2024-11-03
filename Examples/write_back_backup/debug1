@@ -1,0 +1,12 @@
+#!/bin/sh
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock0.bin of=/dev/mtdblock0
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock1.bin of=/dev/mtdblock1
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock2.bin of=/dev/mtdblock2
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock3.bin of=/dev/mtdblock3
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock4.bin of=/dev/mtdblock4
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock5.bin of=/dev/mtdblock5
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock6.bin of=/dev/mtdblock6
+/mnt/extsd/busybox_arm dd if=/mnt/extsd/mtdblock7.bin of=/dev/mtdblock7
+/mnt/extsd/busybox_arm poweroff 
+
+#You may have to fix .btlicense if you get an unregisterd text on the screen. See backup script.

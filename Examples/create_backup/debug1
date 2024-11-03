@@ -1,0 +1,19 @@
+#!/bin/sh
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock0.bin if=/dev/mtdblock0
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock1.bin if=/dev/mtdblock1
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock2.bin if=/dev/mtdblock2
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock3.bin if=/dev/mtdblock3
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock4.bin if=/dev/mtdblock4
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock5.bin if=/dev/mtdblock5
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock6.bin if=/dev/mtdblock6
+/mnt/extsd/busybox_arm dd of=/mnt/extsd/mtdblock7.bin if=/dev/mtdblock7
+/mnt/extsd/busybox_arm poweroff 
+
+if [ -e '/etc/blink/.btlicensed' ]; then
+    # This back's up the LAST/current, if you may want to check your mtblock3 dump.
+    # This is a jiffs filesystem where there may be more
+    cat /etc/blink/.btlicense > /mnt/extsd/btlicense_backup
+fi
+if [ -e '/etc/blink/' ]; then
+    /mnt/extsd/busybox_arm tar cf /mnt/extsd/ble_bluetooth.tar /etc/blink
+fi
