@@ -63,8 +63,8 @@ Recommended , this scripts dumps mtdblock partitions to sd-card
 
 ### backup write back
 
-This allows for software update without the phoenix card suite, but requires sdcard to work.  
-So be carefull with boot0 (mtdblock), this can change the location of the sdcard slot. Since wifi and sdcard are both on the same bus they some times get switched around.
+This allows for software update without the phoenix card suite, but requires sd-card to work.  
+So be carefull with boot0 (mtdblock), this can change the location of the sd-card slot. Since wifi and sd-card are both on the same bus they some times get switched around.
 
 ### Remote access
 
