@@ -125,3 +125,9 @@ Download phoenix card (latest version I came across is on the [sipeed dropbox](h
 ## to do create script
 
 \</tf790.img.dump>\</tf790.img>
+
+## Problem solving
+
+When connection by usb cable make sure your power supply/hub is strong enough and your usb cables are capable to deliver enough power to the device. When weird issues occur resulting in reboots maybe try the original power supply before anything else.
+
+When installing firmware fail, maybe try an other sd-card. I am personally very loyal to Sandisk.
