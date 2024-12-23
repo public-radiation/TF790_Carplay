@@ -1,15 +1,16 @@
 ## TF790
 
-\# Requirments ## Hardware SDcard Laptop/PC/RPI with wifi. From here on referred to as PC ##Software socat (arm) and socat on your PC
+### Requirements 
 
-## root acces (Linux with explanation)
 
-Format the sdcard using the device 'Format SD' function on the device.  
-Power down the device -> place sdcard in a pc.
+## root access (Linux with explanation)
 
-### Create a shell script file on the root of the sdcard called "debug1"
+Format the sd-card using the device 'Format SD' function on the device.  
+Power down the device -> place sd-card in the PC.
 
-In the root of the sdcard we add 2 static armv7l binaires.  
+### Create a shell script file on the root of the sd-card called "debug1"
+
+In the root of the sd-card we add 2 static armv7l binaries.  
 The first one is busybox, you can do without it but the default busybox (shell) is very limited. E.g. no find.  
 Also when overwriting a running rootfs it's better if the running tool isn't on that file system:
 
@@ -28,14 +29,14 @@ Open the debug1 file with a linux text app, vim/nano or kate/gedit and insert th
 /mnt/extsd/socat TCP-LISTEN:12345,reuseaddr,fork EXEC:/bin/sh,pty,stderr,setsid,sigint,sane &amp;
 ```
 
-This forkes a socat sesion to the background listening on port 12345.  
-From an other pc that is connected to the device wifi use this string to connect:
+This forkes a socat session to the background listening on port 12345.  
+From an other PC that is connected to the device wifi use this string to connect:
 
 ```plaintext
 socat FILE:`tty`,raw,echo=0 TCP:target.com:12345
 ```
 
-## root acces (quick version)
+## root access (quick version)
 
 ```plaintext
 cd /media/<user_name>/DASHCAM
@@ -55,14 +56,14 @@ socat FILE:`tty`,raw,echo=0 TCP:target.com:12345
 
 ### full device backup
 
-Recommended , this scripts dumps mtdblock partitions to sdcard
+Recommended , this scripts dumps mtdblock partitions to sd-card
 
 ### backup write back
 
 This allows for software update without the phoenix card suite, but requires sdcard to work.  
 So be carefull with boot0 (mtdblock), this can change the location of the sdcard slot. Since wifi and sdcard are both on the same bus they some times get switched around.
 
-### Remote acces
+### Remote access
 
 See explanation above
 
@@ -102,7 +103,7 @@ When comparing files i recommend to use [hexcompare](http://sourceforge.net/proj
 #### Missing Windows partition (TF981)
 
 Sometimes the package files image.cfg specifies a non-existing windows partition. If that is te case you get a error during image dump.   
-Useing force option allows you to finish the dump, remove the windows parition line from the cfg and you can repackage the file.
+Using force option allows you to finish the dump, remove the windows partition line from the cfg and you can repackage the file.
 
 #### Extract device tree
 
