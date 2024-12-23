@@ -2,6 +2,9 @@
 
 ### Requirements 
 
+Hardware sd-card Laptop/PC/RPI with wifi. From here on referred to as PC, linux is preferred but i think you can get along way using mobaxterm terminal you can get by, not tested tough.
+
+Software socat (arm) and socat on your PC
 
 ## root access (Linux with explanation)
 
