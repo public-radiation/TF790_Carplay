@@ -34,9 +34,10 @@ Open the debug1 file with a linux text app, vim/nano or kate/gedit and insert th
 
 This forkes a socat session to the background listening on port 12345.  
 From an other PC that is connected to the device wifi use this string to connect:
+(if it doesn't connect please verify your ip range by using tools like ifconfig/ip addr show)
 
 ```plaintext
-socat FILE:`tty`,raw,echo=0 TCP:target.com:12345
+socat FILE:`tty`,raw,echo=0 TCP:192.168.10.1:12345
 ```
 
 ## root access (quick version)
