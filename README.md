@@ -126,6 +126,15 @@ Download phoenix card (latest version I came across is on the [sipeed dropbox](h
 
 \</tf790.img.dump>\</tf790.img>
 
+## SDK ##
+There was once a Allwinner SDK on github for the V83x (V831 and V833 are software compatible). Its now offline, unsure why. I don't host it for legal reasons, (i am not a lawyer this is not legal advice). 
+The SDK is using very old version of what was once OpenWRT. It requires (at most) ubuntu 18.04 to work. I added a modified version of the docker file found online for ease of use.
+Extra resources:
+https://wiki.sipeed.com/hardware/en/maixII/M2/resources.html
+http://wiki.lindeni.org/index.php/Lindenis_V833#Tina_Linux
+
+I have tried to recreate the image but my u-boot was to big for the current partition table used on my device. So you millage may very. (I was trying to help a redditer recover his device after bad software update. But that was resolved by switching power supply and writing back the image from my device. So i haven't had the endurance to check the SDK further....)
+
 ## Problem solving
 
 When connection by usb cable make sure your power supply/hub is strong enough and your usb cables are capable to deliver enough power to the device. When weird issues occur resulting in reboots maybe try the original power supply before anything else.
